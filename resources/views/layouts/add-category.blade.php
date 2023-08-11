@@ -8,7 +8,7 @@
                 <div class="card-header">Add category</div>
 
                 <h5 class="card-header">
-                    <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
+                    <a href="{{ route('categories') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
                 </h5>
 
                 @if(session()->has('success'))
@@ -47,8 +47,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="type" name="type" type="submit" value=0 class="btn btn-primary">
                                     Submit
+                                </button>
+                                <button id="type" name="type" type="submit" value=1 class="btn btn-success">
+                                    Submit and return
                                 </button>
                             </div>
                         </div>

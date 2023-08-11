@@ -38,6 +38,7 @@
                          <a class="navbar-brand" href="{{ url('/home/categories') }}">
                             Categories
                          </a>
+                         
                     @endif
                     </ul>
 

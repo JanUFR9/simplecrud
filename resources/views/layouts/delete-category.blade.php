@@ -9,7 +9,7 @@
                     Delete {{ $category->category_name }}
                 </div>
                 <h5 class="card-header">
-                    <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
+                    <a href="{{ route('categories') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
                 </h5>
 
                 <div class="card-body">
@@ -47,7 +47,7 @@
                                 <button type="submit" class="btn btn-danger">
                                     Yes
                                 </button>
-                                <a href="{{ route('home') }}" class="btn btn-info">No</a>
+                                <a href="{{ route('categories') }}" class="btn btn-info">No</a>
                             </div>
                         </div>
                     </form>

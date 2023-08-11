@@ -38,7 +38,7 @@ class CategoryController extends Controller
 
     
         $this->validate($request, [
-            'category_name' => 'required|string',
+            'category_name' => 'required|string|unique:categories',
             
         ]);
 
@@ -48,7 +48,14 @@ class CategoryController extends Controller
         
 
         $category->save();
+        if($request->input('type')==0)
+        {
         return back()->with('success', 'Category created successfully');
+        }
+        else
+        {
+            return redirect()->route('categories')->with('status', 'Category added successfully');
+        }
     }
 
     /**
@@ -75,7 +82,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
-            'category_name' => 'required|string',
+            'category_name' => 'required|string|unique:categories',
         ]);
 
         $category = category::where('id', $id)->firstOrFail();
@@ -92,6 +99,6 @@ class CategoryController extends Controller
     {
         $category = category::where('id', $id)->firstOrFail();
         $category->delete();
-        return redirect()->route('home')->with('success', 'Category deleted successfully');
+        return redirect()->route('categories')->with('status', 'Category deleted successfully');
     }
 }

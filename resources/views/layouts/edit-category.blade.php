@@ -8,13 +8,14 @@
                 <div class="card-header">Edit {{ $category->category_name}}</div>
 
                 <h5 class="card-header">
-                    <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
+                    <a href="{{ route('categories') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
                 </h5>
 
                 @if(session()->has('success'))
                         <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            {{ session()->get('success') }}
+                        {{ session()->get('success') }}
+                            <button type="button" class="btn btn-success close" data-dismiss="alert">×</button>
+                            
                         </div>
                     @endif
 
